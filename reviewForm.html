@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Review Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:lightblue;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .review-form {
+            width: 100%;
+            max-width: 400px;
+            background: #91acb8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .review-form h2 {
+            margin-bottom: 15px;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .stars label {
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .stars input {
+            display: none;
+        }
+        .stars input:checked ~ label {
+            color: gold;
+        }
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #218838;
+        }
+
+        .btn{
+            margin-top: 30px;
+            width:100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #5f9ea0;
+        }
+
+        .btn:hover{
+            background-color:#2fa8ac;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="review-form">
+        <h2>Write Your Feedback</h2>
+        <form id="reviewForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            
+            <div class="stars">
+                <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+                <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+                <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+                <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+                <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+            </div>
+
+            <textarea id="comment" rows="4" placeholder="Your Review" required></textarea>
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+    </div>
+    <div class="check-review">
+        <form action="review.html"><button onclick="openReview()" class="btn">Check Reviews <br> &#8594 </button></form>
+    </div>
+
+    <script>
+        function submitReview() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const comment = document.getElementById("comment").value;
+
+            if (!name || !email ||  !rating || !comment) {
+                alert("Please fill in all fields and select a rating.");
+                return;
+            }
+
+            alert("Thank you for your review!");
+            document.getElementById("reviewForm").reset();
+
+        }
+
+        function openReview(){
+            window.location.href = "review.html";
+        }
+    </script>
+
+</body>
+</html>

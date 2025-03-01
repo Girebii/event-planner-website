@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background:#abb2ba; 
+        }
+
+        /* navigation bar */
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:#1e2761;
+        padding: 15px ;
+        width: 100%;
+        }
+
+        .navbar .logo{
+            display: flex;
+        }
+        .navbar .menu{
+            list-style: none;
+            display: flex;
+            padding: 25px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .navbar .menu li a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 5px 10px;
+        }
+
+        .navbar .menu li a:hover {
+            background-color:#00ffff80;
+            border-radius: 5px;
+            padding: 5px 10px;
+        } 
+
+        .logo img{
+            width: 100px;
+            height: 65px;
+            object-fit: cover;
+            mix-blend-mode:hard-light;
+            z-index: 10000000;
+            border-radius: 50%;
+        } 
+
+        header {
+            background-color: #e4dede;
+            color:black;
+            text-align: center;
+            height: 50px;
+            font-weight: 500;
+            position: absolute;
+            width: 100%;
+            font-size: 20px;
+            padding-bottom: 30px;
+        }
+        span{
+            color:#f15a24;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom:20px;
+            padding-top: 60px;
+        }
+
+        .gallery-item {
+            width:280px;
+            height:350px;
+            margin:50px;
+            padding:10px 0 30px;
+            border-radius: 7px;
+            border: 1px solid black;
+            overflow: hidden;
+            box-shadow: 0 2px 5px #0000001a;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item h3 {
+            text-align:center;
+            padding: 10px;
+            background-color: #3cb33eab;
+        }
+     
+        @media (max-width: 768px) {
+        .menu{
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color:#1e2761;
+        }
+        .menu.active{
+            display: flex;
+        }
+        .menu-icon{
+            display: block;
+        }
+    }
+
+    </style>
+</head>
+<body >
+    <nav class="navbar" id="navbar">
+        <div class="logo"><img src="logo5.jpeg"></div>
+        <ul class="menu">
+            <li><a href="page1.html" target="_self">Home</a></li>
+            <li><a href="services.html" target="_self">Service</a></li>
+            <li><a href="about.html" target="_self">About</a></li>
+            <li><a href="price.html" target="_self">Price</a></li>
+            <li><a href="reviewForm.html" target="_self">Review</a></li>
+            <li><a href="contact.html" target="_self">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- <header>
+        <h1 id="services">OUR <span>SERVICES</span></h1>
+    </header> -->
+
+    <main>
+        <div class="gallery-item">
+            <h3>Birthday</h3>
+            <img src="img2.jpg" alt="Birthday Party"> 
+        </div>
+
+        <div class="gallery-item">
+            <h3>Decoration</h3>
+            <img src="img9.jpg" alt="Wedding Ceremony"> 
+        </div>
+
+        <div class="gallery-item">
+            <h3>PhotoShoot</h3>
+            <img src="img3.jpg" alt="Pre-Wedding Shoot"> 
+        </div>
+
+        <div class="gallery-item">
+            <h3>Catering</h3>
+            <img src="img4.jpg" alt="Delicious Food"> 
+        </div>
+
+        <div class="gallery-item">
+            <h3>Wedding</h3>
+            <img src="img8.jpg" alt="Event Decoration"> 
+        </div>
+
+        <div class="gallery-item">
+            <h3>Ceremony</h3>
+            <img src="img5.jpg"  alt="Grand Ceremony"> 
+        </div>
+    </main>
+
+</body>
+</html>
